@@ -1,0 +1,35 @@
+{
+  "name": "Windows Remote Management (WinRM)",
+  "version": "1.0",
+  "slug": "winrm",
+  "description": "Execute commands on Windows computers over WinRM",
+  "url": "https://github.com/fjch1997/hassio-addons-winrm",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "services",
+  "stdin": true,
+  "host_network": true,
+  "options": {
+    "computers": [
+      {
+        "alias": "test-pc",
+        "address": "192.168.0.1",
+        "username": "user",
+        "password": "password",
+        "transport": "ntlm",
+        "command": "shutdown -h"
+      }
+    ]
+  },
+  "schema": {
+    "computers": [
+      {
+        "alias": "match(^[\\w-]*$)",
+        "address": "str",
+        "username": "str",
+        "password": "password",
+        "transport": "list(ntlm|basic)",
+        "command": "str"
+      }
+    ]
+  }
+}
