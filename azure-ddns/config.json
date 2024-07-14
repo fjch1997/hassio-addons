@@ -1,0 +1,35 @@
+{
+  "name": "Azure Dynamic DNS",
+  "version": "1.0",
+  "slug": "azure-ddns",
+  "description": "Update Azure DNS server with homeassistant IP addresses.",
+  "url": "https://github.com/fjch1997/hassio-addons",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "services",
+  "stdin": true,
+  "host_network": true,
+  "options": {
+    "computers": [
+      {
+        "alias": "test-pc",
+        "address": "192.168.0.1",
+        "username": "user",
+        "password": "password",
+        "transport": "ntlm",
+        "command": "shutdown -h"
+      }
+    ]
+  },
+  "schema": {
+    "computers": [
+      {
+        "alias": "match(^[\\w-]*$)",
+        "address": "str",
+        "username": "str",
+        "password": "password",
+        "transport": "list(ntlm|basic)",
+        "command": "str"
+      }
+    ]
+  }
+}
