@@ -3,7 +3,7 @@
   "version": "1.0",
   "slug": "winrm",
   "description": "Execute commands on Windows computers over WinRM",
-  "url": "https://github.com/fjch1997/hassio-addons-winrm",
+  "url": "https://github.com/fjch1997/hassio-addons",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "services",
   "stdin": true,
