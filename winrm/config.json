@@ -8,6 +8,7 @@
   "startup": "services",
   "stdin": true,
   "host_network": true,
+  "init": false,
   "options": {
     "computers": [
       {
