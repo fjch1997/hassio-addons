@@ -7,29 +7,32 @@
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "services",
   "stdin": true,
+  "host_network": true,
   "init": false,
   "options": {
-    "computers": [
-      {
-        "alias": "test-pc",
-        "address": "192.168.0.1",
-        "username": "user",
-        "password": "password",
-        "transport": "ntlm",
-        "command": "shutdown -h"
-      }
-    ]
+    "tenantId": "00000000-0000-0000-0000-000000000000",
+    "subscriptionId": "00000000-0000-0000-0000-000000000000",
+    "resourceGroup": "MyResourceGroup",
+    "zone": "example.com",
+    "record": "homeassistant",
+    "clientId": "00000000-0000-0000-0000-000000000000",
+    "clientSecret": "qNagE5BUZrTPbxwz2dfu4FVRjn3yL7QC6eHsWKmk+Gs=",
+    "interfaceName": "eth0",
+    "interfaceAddressFamily": "IPv6",
+    "ttl": 3600,
+    "dryRun": false
   },
   "schema": {
-    "computers": [
-      {
-        "alias": "match(^[\\w-]*$)",
-        "address": "str",
-        "username": "str",
-        "password": "password",
-        "transport": "list(ntlm|basic)",
-        "command": "str"
-      }
-    ]
+    "tenantId": "str",
+    "subscriptionId": "str",
+    "resourceGroup": "str",
+    "zone": "str",
+    "record": "str",
+    "clientId": "str",
+    "clientSecret": "password",
+    "interfaceName": "str",
+    "interfaceAddressFamily": "list(Any|IPv4|IPv6)",
+    "ttl": "int",
+    "dryRun": "bool"
   }
 }
