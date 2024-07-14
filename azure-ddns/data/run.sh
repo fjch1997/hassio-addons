@@ -3,7 +3,6 @@ set -e
 
 while :
 do
-    ha network info
-    /Azure-DynDns --interface-name eth0 --dry-run --hassio
+    ./Azure-DynDns --interface-name eth0 --dry-run
     sleep 300
 done
