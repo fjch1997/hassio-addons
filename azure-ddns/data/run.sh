@@ -23,6 +23,6 @@ do
     --interface-name "$(bashio::config 'interfaceName')" \
     --interface-address-family $(bashio::config 'interfaceAddressFamily') \
     --ttl $(bashio::config 'ttl') \
-    $DryRun
+    $DryRun || true
     sleep 300
 done
