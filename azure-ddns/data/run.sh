@@ -15,10 +15,12 @@ do
     InterfaceName=""
     for i in $(bashio::config "interfaceName"); do
         InterfaceName+="--interface-name \"$i\" "
+    done
 
     InterfaceAddressFamily=""
     for i in $(bashio::config "interfaceAddressFamily"); do
         InterfaceAddressFamily+="--interface-address-family \"$i\" "
+    done
 
     /root/.dotnet/dotnet /Azure-DynDns.dll \
     --tenant-id "$(bashio::config 'tenantId')" \
