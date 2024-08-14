@@ -1,6 +1,6 @@
 {
   "name": "Azure Dynamic DNS",
-  "version": "1.1",
+  "version": "1.2",
   "slug": "azure-ddns",
   "description": "Update Azure DNS server with homeassistant IP addresses.",
   "url": "https://github.com/fjch1997/hassio-addons",
