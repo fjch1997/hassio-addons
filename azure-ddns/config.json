@@ -17,8 +17,8 @@
     "record": "homeassistant",
     "clientId": "00000000-0000-0000-0000-000000000000",
     "clientSecret": "qNagE5BUZrTPbxwz2dfu4FVRjn3yL7QC6eHsWKmk+Gs=",
-    "interfaceName": "eth0",
-    "interfaceAddressFamily": "IPv6",
+    "interfaceName": ["eth0"],
+    "interfaceAddressFamily": ["IPv6"],
     "ttl": 3600,
     "dryRun": false
   },
@@ -30,8 +30,8 @@
     "record": "str",
     "clientId": "str",
     "clientSecret": "password",
-    "interfaceName": "str",
-    "interfaceAddressFamily": "list(Any|IPv4|IPv6)",
+    "interfaceName": ["str"],
+    "interfaceAddressFamily": ["list(Any|IPv4|IPv6)"],
     "ttl": "int",
     "dryRun": "bool"
   }

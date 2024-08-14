@@ -12,6 +12,14 @@ do
         DryRun=""
     fi
 
+    InterfaceName=""
+    for i in $(bashio::config "interfaceName"); do
+        InterfaceName+="--interface-name \"$i\" "
+
+    InterfaceAddressFamily=""
+    for i in $(bashio::config "interfaceAddressFamily"); do
+        InterfaceAddressFamily+="--interface-address-family \"$i\" "
+
     /root/.dotnet/dotnet /Azure-DynDns.dll \
     --tenant-id "$(bashio::config 'tenantId')" \
     --subscription-id "$(bashio::config 'subscriptionId')" \
@@ -20,8 +28,8 @@ do
     --record "$(bashio::config 'record')" \
     --client-id "$(bashio::config 'clientId')" \
     --client-secret "$(bashio::config 'clientSecret')" \
-    --interface-name "$(bashio::config 'interfaceName')" \
-    --interface-address-family $(bashio::config 'interfaceAddressFamily') \
+    $InterfaceName \
+    $InterfaceAddressFamily \
     --ttl $(bashio::config 'ttl') \
     $DryRun || true
     sleep 300
