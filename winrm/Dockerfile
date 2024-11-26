@@ -6,7 +6,7 @@ ENV LANG C.UTF-8
 
 # Setup base
 RUN apk add --no-cache python3 py3-pip gcc musl-dev python3-dev libffi-dev openssl-dev cargo
-RUN pip install pywinrm
+RUN apk add py3-pywinrm
 RUN apk del gcc musl-dev python3-dev libffi-dev openssl-dev cargo
 
 # Copy data
